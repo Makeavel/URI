@@ -1,38 +1,45 @@
 #include<stdio.h>
 
-void operacao(){
+int calculo(){
 
-    int  i , dif = 0 , soma= 0, num1 , num2 ;
-    scanf("%d %d", &num1 , &num2);
+    int numA , numB , sum=0 , i ;
 
-    dif = abs(num2 - num1)+2;
+    scanf("%d %d", &numA , &numB);
 
-    if(num1 != 0 || num2 != 0){
-        if(num1 < num2){
-        // se num1 for menor que num2 entra nesse for
-            for(i = num1 ; i <= num2 ; i++){
-                printf("%d ",i);
+    if( numA > 0 && numB > 0){
+        
+        if(numA < numB){
 
-                num1 = num1 + 1;
-                soma = num1 + soma;
+            for(i = numA ; i <= numB ; i++){               
+                sum = sum + numA;
+                numA += 1;
+                printf("%d ", i);
+                
             }
+           
         }
+        else if(numA > numB){
 
-        else if(num2 < num1){
-        // se num2 for menor que num1 entra neste for
-            for(i = num2 ; i <= num1 ; i++){
-                //printf("%d ",i);
-
-                soma = num1 + soma;
-                printf(" %d ",soma);
-            }
+            for(i = numB ; i <= numA ; i++){
+                sum = sum + numB;
+                numB += 1;
+                printf("%d ", i);
+                
+            }           
         }
-        printf("Sum=%d",soma);
+        // Se A e B forem de mesmo valor cai aqui:       
+        else{
+            printf("%d " , sum);
+        }
+        printf("Sum=%d\n", sum);
     }
 
+    else{
+        return;
+    }
 }
 
 int main(){
-    operacao();
+     calculo();
     return 0;
 }
