@@ -5,5 +5,6 @@ https://www.urionlinejudge.com.br
 
 Linguagens:
 - C
+- Kotlin
 - Python
 - SQL
